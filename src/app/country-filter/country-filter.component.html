@@ -1,0 +1,14 @@
+<section class="layout-column align-items-center mt-50">
+    <input  type="text" class="large" 
+            placeholder="Enter Country Name"
+            id="app-input" 
+            data-test-id="app-input" 
+            [(ngModel)]="searchText" 
+            (ngModelChange)="change($event)"/>
+  
+    <ul *ngIf="filteredCountryList.length" class="card country-list" data-test-id="countryList" >
+      <li *ngFor="let country of filteredCountryList" class="pa-10 pl-20">{{country}}</li>
+    </ul>
+  ​
+    <div *ngIf="!filteredCountryList.length" class="mt-50 slide-up-fade-in" id="no-result" data-test-id="no-result">No Results Found</div>
+  </section>
